@@ -1,0 +1,15 @@
+{% extends 'Layout.html.twig' %}
+
+<div class="row">
+  <div class="col-md-12">
+    <p>Par <a href="{{ path('tech_corp_front_user_timeline',{userId: status.user.id}) }}">{{ status.username }}</a></p>
+    <p>{{ status.content }}</p>
+    <p>Le {{ status.createdAt|date('Y-m-d H:i:s') }}</p>
+  </div>
+</div>
+
+<div>
+
+
+
+</div>

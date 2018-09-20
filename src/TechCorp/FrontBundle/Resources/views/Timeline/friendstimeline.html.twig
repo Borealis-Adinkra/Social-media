@@ -1,0 +1,43 @@
+{% extends 'TechCorpFrontBundle::Layout.html.twig' %}
+
+
+{% block content %}
+<div class="container">
+  <h1>Timeline de {{ user.username }}</h1>
+   <h2>Liste des personnes ajoutees </h2>
+    
+   
+    {% for currFriend in user.friends %}
+     <p> {{ currFriend.username }}</p>
+     {% else %}
+     
+     <p> cet utilisteur n'a pas d'ami<p> 
+  {% endfor %}
+  
+     <h2>Status </h2>
+    <table class="statuses_list">
+      <thead>
+       <tr>
+        <th>User</th>
+        <th>Content</th>
+        <th>Deleted</th> 
+        <th>Created</th>
+       </tr>
+      </thead>
+      <tbody>
+      {% if statuses != null %}
+       {% for status in statuses %}
+        <tr>
+         <td>{{ status.user.username }}</td>
+         <td>{{ status.content }}</td>
+         <td>{{ status.deleted ? "deleted" :"visible" }}</td>
+         <td>{{ status.createdAt|date('d-m-y') }}</td>
+        </tr>
+       {% endfor %}
+      </tbody>
+   {% endif %}
+</div>
+
+
+
+{% endblock content %}

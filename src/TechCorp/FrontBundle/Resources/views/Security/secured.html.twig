@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+</head>
+<body>
+<h1>Page Sécurisée</h1>
+<h2>{{ user.username }}</h2>
+{% if is_granted('ROLE_USER') %}
+	<p>vous êtes un simple utilisateur</p>
+{% elseif is_granted('ADMIN') %}	
+     <p>vous êtes un administrateur</p>
+{% endif %}
+<a href="{{ path('tech_corp_front_security_logout') }}">Deconnexion</a>
+</body>
+</html>

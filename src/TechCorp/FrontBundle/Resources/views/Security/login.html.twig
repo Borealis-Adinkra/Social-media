@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+</head>
+<body>
+<h1>Login</h1>
+<form action="{{ path('tech_corp_front_security_check_login') }}" method="post">
+ <label for="username">Nom d'utilisateur:</label>
+ <input type="text" id="username" name="_username">
+ 
+ <label for="username">Mot de pass:</label>
+ <input type="password" id="password" name="_password">
+ 
+ <button type="submit">Login</button>
+
+
+</form>
+
+</body>
+</html>

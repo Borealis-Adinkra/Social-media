@@ -1,0 +1,24 @@
+
+tech_corp_front_homepage:
+    path:     /
+    defaults: { _controller: "TechCorpFrontBundle:Static:homepage" }
+    
+tech_corp_front_hello:  
+    pattern:     /hello/{person}
+    defaults: { _controller: "TechCorpFrontBundle:Static:Hello" }
+    
+tech_corp_front_about:  
+    pattern:     /about
+    defaults: { _controller: "TechCorpFrontBundle:Static:about" }    
+
+tech_corp_front_timeline:
+    path:     /timeline
+    defaults: { _controller: "TechCorpFrontBundle:Timeline:timeline" }
+    
+tech_corp_front_usertimeline:
+    path:     /timeline/{userid}
+    defaults: { _controller: "TechCorpFrontBundle:Timeline:UserTimeLine" }
+    
+tech_corp_front_friends_timeline:
+    path:     /friends_timeline/{userid}
+    defaults: { _controller: "TechCorpFrontBundle:Timeline:FriendsTimeLine" }    

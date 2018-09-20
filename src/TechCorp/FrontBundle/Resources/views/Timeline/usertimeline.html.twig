@@ -1,0 +1,56 @@
+{% extends 'TechCorpFrontBundle::Layout.html.twig' %}
+
+
+{% block content %}
+<div class="container">
+  <h1>Timeline de {{ user.username }}</h1>
+  
+  {% if is_granted('IS_AUTHENTICATED_REMEMBERED') and app.user==user %}
+  
+  {{ form_start(form) }}
+   {{ form_errors(form) }}
+   
+   <div>
+    {{ form_label(form.content)}}
+    {{ form_errors(form.content) }}
+    {{ form_widget(form.content) }}
+   
+   </div>
+    {{ form_widget(form.Enregistrer) }}
+  
+  {{ form_end(form) }}
+  
+  {% endif %}
+  
+   <h2>Liste des personnes ajoutees </h2>
+    
+   
+    {% for currFriend in user.friends %}
+     <p> {{ currFriend.username }}</p>
+     {% else %}
+     
+     <p> cet utilisteur n'a pas d'ami<p> 
+  {% endfor %}
+  
+     <h2>Status </h2>
+    <table class="statuses_list">
+      <thead>
+       <tr>
+        <th>Content</th>
+        <th>Deleted</th> 
+        <th>Created At</th>
+       </tr>
+      </thead>
+      <tbody>
+       {% for status in statuses %}
+        <tr>
+         <td>{{ status.content }}</td>
+         <td>{{ status.deleted ? "deleted" :"visible" }}</td>
+         <td>{{ status.createdAt|date('d-m-y') }}</td>
+        </tr>
+       {% endfor %}
+      </tbody>
+  
+</div>
+
+{% endblock content %}

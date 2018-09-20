@@ -1,0 +1,14 @@
+
+tech_corp_front_security_login:
+      path:  /secured/login
+      defaults: { _controller: "TechCorpFrontBundle:Security:login" }
+
+tech_corp_front_security_secured:
+      path:  /secured/secured
+      defaults: { _controller: "TechCorpFrontBundle:Security:secured" }
+      
+tech_corp_front_security_check_login:
+      path:  /secured/login_check
+      
+tech_corp_front_security_logout:
+      path:  /secured/logout      

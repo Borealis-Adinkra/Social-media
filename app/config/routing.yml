@@ -1,0 +1,15 @@
+tech_corp_front:
+    resource: "@TechCorpFrontBundle/Resources/config/routing.yml"
+    prefix:   /
+
+tech_corp_front_security:
+    resource: "@TechCorpFrontBundle/Resources/config/security_routes.yml"
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

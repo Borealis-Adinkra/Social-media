@@ -1,0 +1,30 @@
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+ <div class="container">
+  <div class="navbar-header">
+   <a class="navbar-brand" href="{{ url('tech_corp_front_homepage') }}">The Project</a>
+   
+   <ul class="nav navbar-nav">
+   <li><a href="{{ url('tech_corp_front_homepage') }}">Accueil</a></li>
+   <li><a href="{{ url('tech_corp_front_about') }}"> A propos</a></li>
+   <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Compte <span class="caret"></span></a>
+     <ul>
+     {% if not is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+     <li><a href="{{ path('fos_user_registration_register') }}">S'inscrire</a></li>
+     <li><a href="{{ path('fos_user_security_login')}}">S'authentifier</a></li>
+     <li><a href="{{ path('fos_user_resetting_request') }}">mot de pass oublie ?</a></li>
+     {% else %}
+     <li><a href="{{ path('tech_corp_front_usertimeline',{ userid : app.user.id }) }}">Timeline</a></li>
+     <li><a href="{{ path('fos_user_security_logout') }}">Se deconnecter</a></li>
+     {% endif %}
+     </ul>
+     
+   </li>
+   
+   
+   </ul>
+
+  </div>
+ </div>
+</div>
+
